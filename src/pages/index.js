@@ -1,8 +1,7 @@
-import {Layout, Product} from '../components';
-import { useProducts } from '../hooks';
+import { fetAllProducts } from '../../server/fetchAllProducts';
+import {Product} from '../components';
 
-const Home = () => {
-  const { products } = useProducts()
+const Home = ({products}) => {
   return (
       <main>
         <section className="my-4 p-4 grid grid-cols-3 gap-6 lg:grid-cols-4">
@@ -17,3 +16,12 @@ const Home = () => {
 };
 
 export default Home;
+
+export function getServerSideProps() {
+  const products = fetAllProducts() 
+  return {
+    props: {
+        products,
+      }
+    }
+}
