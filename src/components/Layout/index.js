@@ -5,7 +5,7 @@ import { supabase } from '../../utils/supabaseClient';
 import Auth from '../Auth';
 import Modal from '../Modal';
 
-const Layout = ({ children }) => {
+export const Layout = ({ children }) => {
   const router = useRouter();
 
   const {

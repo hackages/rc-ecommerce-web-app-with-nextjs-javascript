@@ -1,25 +1,8 @@
-import axios from 'axios';
-import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
-import Layout from '../components/Layout';
-import Product from '../components/Product';
-
-const API_URL = `http://localhost:3000`;
+import {Layout, Product} from '../components';
+import { useProducts } from '../hooks';
 
 const Home = () => {
-  const [products, setProducts] = useState([]);
-
-  const router = useRouter();
-
-  useEffect(() => {
-    async function getProducts() {
-      const data = await axios.get(`${API_URL}/api/products`);
-      console.log(data.data);
-      setProducts(data.data);
-    }
-    getProducts();
-  }, []);
-
+  const { products } = useProducts()
   return (
     <Layout>
       <main>
