@@ -1,13 +1,5 @@
-import React from 'react';
-import Layout from '../components/Layout';
-import ProductForm from '../components/Product/ProductForm';
+import { ProductForm } from '../components';
 
-const AdminPage = () => {
-  return (
-    <Layout>
-      <ProductForm />
-    </Layout>
-  );
-};
+const AdminPage = () => <ProductForm />;
 
 export default AdminPage;

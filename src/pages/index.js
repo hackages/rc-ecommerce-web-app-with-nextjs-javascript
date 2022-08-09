@@ -4,7 +4,6 @@ import { useProducts } from '../hooks';
 const Home = () => {
   const { products } = useProducts()
   return (
-    <Layout>
       <main>
         <section className="my-4 p-4 grid grid-cols-3 gap-6 lg:grid-cols-4">
           {products &&
@@ -14,7 +13,6 @@ const Home = () => {
             ))}
         </section>
       </main>
-    </Layout>
   );
 };
 
