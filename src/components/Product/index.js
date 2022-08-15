@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-const Product = (product) => {
+export const Product = (product) => {
   return (
     <div
       className="p-4 hover:scale-105 hover:border-black transition transform flex space-y-2 flex-col border border-black/30"
