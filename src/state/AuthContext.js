@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer } from 'react';
+import { createContext, useContext, useEffect, useReducer } from 'react';
 import { supabase } from '../utils/supabaseClient';
 
 const intialAuthState = {
@@ -8,6 +8,23 @@ const intialAuthState = {
 };
 
 export const AuthContext = createContext(intialAuthState);
+
+export const useAuthContext = () => {
+  const {
+    state,
+    dispatch,
+  } = useContext(AuthContext);
+
+  const { isModalOpen, formType, session } = state;
+
+
+  return {
+    isModalOpen,
+    formType,
+    session,
+    dispatch
+  }
+}
 
 const authReducer = (state, action) => {
   switch (action.type) {

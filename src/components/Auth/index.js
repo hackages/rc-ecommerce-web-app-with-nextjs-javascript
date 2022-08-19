@@ -1,16 +1,13 @@
-import React, { useContext, useState } from 'react';
+import { useState } from 'react';
 import toast from 'react-hot-toast';
-import useForm from '../../hooks/useForm';
-import { AuthContext } from '../../state/AuthContext';
+import useForm from '../../hooks';
+import {useAuthContext } from '../../state/AuthContext';
 import { supabase } from '../../utils/supabaseClient';
 
 export const Auth = () => {
-  const {
-    state: { formType },
-    dispatch,
-  } = useContext(AuthContext);
-
   const [loading, setLoading] = useState(false);
+
+  const { dispatch, formType} = useAuthContext()
 
   const { form, handleChange, resetForm } = useForm({
     name: '',

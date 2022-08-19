@@ -1,16 +1,12 @@
 import { useRouter } from 'next/router';
-import { useContext } from 'react';
-import { AuthContext } from '../../state/AuthContext';
+import { useAuthContext } from '../../state/AuthContext';
 import { supabase } from '../../utils/supabaseClient';
-import { Auth, Modal } from '..'
+import { Auth, Modal  } from '..'
 
 export const Layout = ({ children }) => {
   const router = useRouter();
 
-  const {
-    state: { isModalOpen, formType, session },
-    dispatch,
-  } = useContext(AuthContext);
+  const {session, isModalOpen} = useAuthContext()
 
   const handleLogout = async () => {
     await supabase.auth.signOut();
