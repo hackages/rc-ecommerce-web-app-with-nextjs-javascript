@@ -4,7 +4,7 @@ import useForm from '../../hooks/useForm';
 import { AuthContext } from '../../state/AuthContext';
 import { supabase } from '../../utils/supabaseClient';
 
-const Auth = () => {
+export const Auth = () => {
   const {
     state: { formType },
     dispatch,

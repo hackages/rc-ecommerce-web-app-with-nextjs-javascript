@@ -1,9 +1,9 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import useForm from '../../../hooks/useForm';
 import { supabase } from '../../../utils/supabaseClient';
 
-const ProductForm = () => {
+export const ProductForm = () => {
   const { form, handleChange, resetForm } = useForm({
     name: '',
     price: '',

@@ -1,9 +1,8 @@
 import { useRouter } from 'next/router';
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { AuthContext } from '../../state/AuthContext';
 import { supabase } from '../../utils/supabaseClient';
-import Auth from '../Auth';
-import Modal from '../Modal';
+import { Auth, Modal } from '..'
 
 export const Layout = ({ children }) => {
   const router = useRouter();

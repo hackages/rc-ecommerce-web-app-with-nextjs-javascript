@@ -1,7 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 
-export default function Modal({ isOpen, closeModal, title, children }) {
+export function Modal({ isOpen, closeModal, title, children }) {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={closeModal}>
@@ -44,3 +44,5 @@ export default function Modal({ isOpen, closeModal, title, children }) {
     </Transition>
   );
 }
+
+export default Modal;
