@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const API_URL = `http://localhost:3001`;
+const API_URL = `http://localhost:3000`;
 
 export function useProducts() {
   const [products, setProducts] = useState([]);

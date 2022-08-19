@@ -1,9 +1,7 @@
+export { getServerSideProps } from '../../server/products';
 import { Product } from '../components';
-import { useProducts } from '../hooks';
 
-const Home = () => {
-  const {products} = useProducts()
-
+const Home = ({products}) => {
   return (
       <main>
         <section className="my-4 p-4 grid grid-cols-3 gap-6 lg:grid-cols-4">
